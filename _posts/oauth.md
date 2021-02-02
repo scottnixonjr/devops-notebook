@@ -16,7 +16,9 @@ The **Authorization code** is mostly used for server-side and mobile web apps. *
 - `clientCredentials` (previously `application`)
 
 
-OpenID Connect defines a discovery mechanism, called OpenID Connect Discovery, where an OpenID server publishes its metadata at a well-known URL [.well-known/openid-configuration](https://auth0.auth0.com/.well-known/openid-configuration)
+**OpenID Connect Discovery**
+
+OpenID Connect defines a discovery mechanism, called OpenID Connect Discovery, where an OpenID server publishes its metadata at a well-known URL [.well-known/openid-configuration](https://auth0.auth0.com/.well-known/openid-configuration). This was added to the OAuth2 protocol.
 
 
 **Scope**
