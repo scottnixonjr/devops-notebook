@@ -1,4 +1,6 @@
-# OAuth
+# OpenID Connect & OAuth2
+
+The OpenId Connect is an identity layer ontop the OAuth2 protocol. I find that documentation often intermixes the two, and these notes mostly covers the OpenID spec.
 
 ## Flows
 
@@ -54,7 +56,7 @@ azp - Authorized Party is the party to which the token was issued. type: StringO
 Glossary:
 
 - Client: Usually a end-user authenticating from a web browser or mobile app.
-- Issuer: OpenID SSO authentication provider such as Google, Twitter, Auth0, Okta.
+- Authorization Server: OpenID SSO authentication provider such as Google, Twitter, Auth0, Okta. Often reference as Issuer.
 - Relay Server: Typically the web application you are trying to access. 
 
 When I use my Firefox browser(Client) to log into StackOverflow.com (Relay Server), I'm logging in with my Google Account (Issuer).
