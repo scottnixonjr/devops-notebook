@@ -1,7 +1,13 @@
 # AWS CLI
 
+This guide favors v2 of the cli.
 
-Assume Role:
+`aws ecr get-login` is more secure and should replace all uses of `$(aws ecr get-login -no-include-email)`
+
+Example of how to pass it to docker.
+`aws ecr get-login-password | docker login --username AWS --password-stdin MY-REGISTRY-URL`
+
+## Assume Role:
 
 `aws sts assume-role --role-arn "arn:aws:iam::${AWS::Account}:role/${ROLE_NAME}" --role-session-name AWSCLI-Session`
 

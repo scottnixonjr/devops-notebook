@@ -2,6 +2,17 @@
 
 The OpenId Connect is an identity layer ontop the OAuth2 protocol. I find that documentation often intermixes the two, and these notes mostly covers the OpenID spec.
 
+Overview of the Process:
+
+- 1 Resource Owner accesses Application and asks to login
+- 2 Client sends it's client-id, redirect-uri, response type, and the list of scopes it needs to the Authorization Server.
+- 3 The Authorization Server verifies the Resource Owner with login credientals.
+- 4 It prompts the Resources Owner to approve the Application's access to a list of scopes.
+- 5 The Auth Server redirects back to the client application's redirect_uri with an client an Authorization Code
+- 6 The client then sends back the Authorization Code, client-id, and  client secret back to the Authorization Server for an Access token. It does not use the Resource Owners Browser, the connect is directly between the Client and Authorization Server. 
+- 7 The Authorization Server verifies the data and responds with the access token is the used to communicate with the Resource Server.
+- 8 The client uses the access token to communicate with the Resource Server.
+
 ## Flows
 
 Flows are also called grant types which is the process for how a client gets an access token from the auth server. 
@@ -55,9 +66,14 @@ azp - Authorized Party is the party to which the token was issued. type: StringO
 
 Glossary:
 
+- Resource Owner: A user and their data.
 - Client: Usually a end-user authenticating from a web browser or mobile app.
 - Authorization Server: OpenID SSO authentication provider such as Google, Twitter, Auth0, Okta. Often reference as Issuer.
 - Relay Server: Typically the web application you are trying to access. 
+- Resource Server is the API or Web app the Resource Owner is using.
+- client-id: used to identify the application
+- client secret: Secret that only the Client and the Authorizaiton server know.
+- Authorization code: temporary secret send from the Auth Server to the client. 
 
 When I use my Firefox browser(Client) to log into StackOverflow.com (Relay Server), I'm logging in with my Google Account (Issuer).
 

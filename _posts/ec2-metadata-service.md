@@ -1,6 +1,6 @@
 # EC2 Metadata Services
 
-By default, both v1 and v2 are available to use.
+By default, both v1 and v2 are available to use. Using v1 you can make GET Http requests, but with v2 sessions you need to make PUT request to create a token. Session based requests need to pass the token in a header for get requests.
 
 ## Service Version 2
 
