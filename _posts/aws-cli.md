@@ -2,6 +2,21 @@
 
 This guide favors v2 of the cli.
 
+Gets you a login token
+`aws ecr get-login-password --region us-east-1`
+
+Added ECR creds to Docker.
+```
+export REGION=us-east-1
+export ACCOUNT=11111111111
+aws ecr get-login-password \
+    --region $REGION \
+| docker login \
+    --username AWS \
+    --password-stdin $ACCOUNT.dkr.ecr.$REGION.amazonaws.com
+```
+
+Used with cli v1
 `aws ecr get-login` is more secure and should replace all uses of `$(aws ecr get-login -no-include-email)`
 
 Example of how to pass it to docker.
