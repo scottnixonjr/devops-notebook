@@ -54,7 +54,7 @@ Bolded are required.
 
 auth_time -  When the end-user authentication occured. type: unixtime number
 
-nonce - Used to prevent replay access, as the clients much verify the nonce claim value. type: string
+nonce - Used to prevent replay access, as the clients must verify the nonce claim value. type: string
 
 acr - Authentication Context Class Reference allows you to specific a long-lived session such as an expires weekly cookie, but then requires you to re-authenticate to change your password, add a bank account, send money, etc.
 
